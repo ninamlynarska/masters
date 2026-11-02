@@ -1,0 +1,12 @@
+# Data is never committed (large files, Fannie Mae terms of use)
+data/
+tests/_synth/
+*.csv
+*.parquet
+*.zip
+
+# Python
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
