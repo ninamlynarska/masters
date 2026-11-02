@@ -1,35 +1,35 @@
-# Budowa zbioru do modelu PD na danych Fannie Mae
+# Building a PD model dataset using Fannie Mae data
 
-Projekt zamienia surowe dane o kredytach hipotecznych w zbiór do modelowania PD, z definicją defaultu opartą na art. 178 CRR.
+This project converts raw mortgage loan data into a PD model dataset, with a default definition based on Article 178 of the CRR.
 
-## Kolejność pracy
+## Workflow
 
-Uruchamiaj notatniki po kolei przez **Run All**. Każdy zaczyna się od opisu celu, danych wejściowych i wyniku.
+Run the notebooks one by one using **Run All**. Each notebook begins with a description of the purpose, input data, and output.
 
-| Notatnik | Pytanie, na które odpowiada | Wynik |
+| Notebook | Question it answers | Output |
 |---|---|---|
-| `00_data_overview.ipynb` | Jak wyglądają oryginalne dane? | tabele w `reports/overview/` |
-| `01_data_cleaning.ipynb` | Które kredyty i zmienne bierzemy do badania? | `clean/` |
-| `02_default_definition.ipynb` | Kiedy kredyt jest w defaulcie? | `default/` |
-| `03_default_test.ipynb` | Czy kod poprawnie stosuje tę definicję? | tabele testów |
-| `04_model_dataset.ipynb` | Jak wygląda zbiór do modelu PD? | `model_dataset.parquet` |
-| `05_eda.ipynb` | Co widać w danych przed modelowaniem? | tabele i wykresy |
+| `00_data_overview.ipynb` | What does the original data look like? | tables in `reports/overview/` |
+| `01_data_cleaning.ipynb` | Which loans and variables are we examining? | `clean/` |
+| `02_default_definition.ipynb` | When is a loan in default? | `default/` |
+| `03_default_test.ipynb` | Does the code use this definition correctly? | Test tables |
+| `04_model_dataset.ipynb` | What does the PD model set look like? | `model_dataset.parquet` |
+| `05_eda.ipynb` | What can be seen in the data before modeling? | Tables and graphs |
 
-## Pliki pomocnicze
+## Support files
 
-| Plik | Do czego służy | Kiedy go otworzyć |
+| File | What is it for | When to open it |
 |---|---|---|
-| `config.py` | wszystkie założenia: folder z danymi, kohorty, progi, okres COVID | gdy zmieniasz założenie |
-| `functions.py` | szczegóły obliczeń używanych w notatnikach | gdy chcesz sprawdzić dokładny wzór |
-| `columns.py` | kolejność kolumn w surowych plikach | gdy zmieni się układ plików |
-| `DEFAULT_DEFINITION.md` | opis metody i założeń | przy pisaniu pracy |
-| `tests/make_synthetic.py` | sztuczne dane do sprawdzenia kodu | zwykle niepotrzebny |
+| `config.py` | all assumptions: data folder, cohorts, thresholds, COVID period | when changing an assumption |
+| `functions.py` | details of calculations used in notebooks | when you want to check the exact formula |
+| `columns.py` | column order in raw files | when the file layout changes |
+| `DEFAULT_DEFINITION.md` | description of the method and assumptions | when writing a thesis |
+| `tests/make_synthetic.py` | artificial data for code verification | usually unnecessary |
 
-## Przygotowanie
+## Preparation
 
-1. Zainstaluj biblioteki:
-   ```
-   python -m pip install -r requirements.txt
-   ```
-2. Zapisz pliki kwartalne jako `raw/2007Q1.csv` w folderze z danymi.
-3. Ustaw w `config.py` wartości `DATA_DIR` i `FILES`.
+1. Install the libraries:
+```
+python -m pip install -r requirements.txt
+```
+2. Save the quarterly files as `raw/2007Q1.csv` in the data folder.
+3. Set the `DATA_DIR` and `FILES` values ​​in `config.py`.
