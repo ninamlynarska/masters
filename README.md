@@ -6,14 +6,14 @@ This project converts raw mortgage loan data into a PD model dataset, with a def
 
 Run the notebooks one by one using **Run All**. Each notebook begins with a description of the purpose, input data, and output.
 
-| Notebook | Question it answers | Output |
+| Notebook | Data | Output |
 |---|---|---|
-| `00_data_overview.ipynb` | What does the original data look like? | tables in `reports/overview/` |
-| `01_data_cleaning.ipynb` | Which loans and variables are we examining? | `clean/` |
-| `02_default_definition.ipynb` | When is a loan in default? | `default/` |
-| `03_default_test.ipynb` | Does the code use this definition correctly? | Test tables |
-| `04_model_dataset.ipynb` | What does the PD model set look like? | `model_dataset.parquet` |
-| `05_eda.ipynb` | What can be seen in the data before modeling? | Tables and graphs |
+| `00_data_overview.ipynb` | Original data | tables in `reports/overview/` |
+| `01_data_cleaning.ipynb` | Analyses of loans and variables - raw data | `clean/` |
+| `02_default_definition.ipynb` | Loans in default | `default/` |
+| `03_default_test.ipynb` | Testing DoD | Test tables |
+| `04_model_dataset.ipynb` | Model set | `model_dataset.parquet` |
+| `05_eda.ipynb` | Data analysis | Tables and graphs |
 
 ## Support files
 
